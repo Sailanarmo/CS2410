@@ -1,9 +1,14 @@
 package cs2410.assn3.command;
 
+import cs2410.assn3.directory.Directory;
+import cs2410.assn3.controller.Controller;
+
 import java.util.Scanner;
 
-public class CommandDirectory() { 
+public class CommandDirectory { 
 
+    Directory directory = new Directory();
+    
     public CommandDirectory(){} //need to see if this is correct
     
     public void printMenu(){
@@ -16,7 +21,7 @@ public class CommandDirectory() {
     }
 
     public void askInput(){
-	
+
 	Scanner input = new Scanner(System.in);
 	System.out.print("Choose an option: ");
 	int option = input.nextInt();
@@ -27,7 +32,7 @@ public class CommandDirectory() {
 	}
 
 	if (option == 1){
-	    System.out.println("You have chosen 1");
+	    directory.readFromFile();
 	    System.out.println();
 	    printMenu();
 	}
@@ -37,7 +42,7 @@ public class CommandDirectory() {
 	    printMenu();
 	}
 	if (option == 3){
-	    System.out.println("You have chosen 3");
+	    directory.averageAge();
 	    System.out.println();
 	    printMenu();
 	}
