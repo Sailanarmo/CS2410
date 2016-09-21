@@ -37,7 +37,7 @@ public class CommandDirectory {
 	    printMenu();
 	}
 	if (option == 2){
-	    System.out.println("You have chosen 2");
+	    directory.insertFile();
 	    System.out.println();
 	    printMenu();
 	}

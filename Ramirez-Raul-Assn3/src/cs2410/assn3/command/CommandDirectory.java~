@@ -42,7 +42,7 @@ public class CommandDirectory {
 	    printMenu();
 	}
 	if (option == 3){
-	    directory.averageAge();
+	    System.out.println("Average Age: " + directory.averageAge());
 	    System.out.println();
 	    printMenu();
 	}

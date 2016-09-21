@@ -1,10 +1,11 @@
 package cs2410.assn3.directory;
 
-import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 
 /**
@@ -52,13 +53,21 @@ public class Directory {
 
     public void insertFile(){
 	Scanner input = new Scanner(System.in);
-	String fname = input.next();
-	String lname = input.next();
-	String age = input.next();
-	String number = input.next();
+	
 	try{
+	    System.out.print("Enter First Name: ");
+	    String fName = input.next();
+	    System.out.print("Enter Last Name: ");
+	    String lName = input.next();
+	    System.out.print("Enter Age: ");
+            String age = input.next();
+	    System.out.print("Enter Phone Number: ");
+	    String number = input.next();
 	    fileOut = new PrintWriter(new BufferedWriter(new FileWriter("././data/cs2410-directory.data", true)));
-	    fileOut.print(
+	    fileOut.print(fName + " " + lName + " " + age + " " + number);
+	} catch (FileNotFoundException e){
+	    e.printStackTrace();
+	}
 
     public float averageAge(){
 	
