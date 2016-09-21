@@ -37,7 +37,16 @@ public class CommandDirectory {
 	    printMenu();
 	}
 	if (option == 2){
-	    System.out.println("You have chosen 2");
+		Scanner insert = new Scanner(System.in);
+		System.out.print("Enter First Name: ");
+		String fName = insert.next();
+		System.out.print("Enter Last Name: ");
+		String lName = insert.next();
+		System.out.print("Enter Age: ");
+		String age = insert.next();
+		System.out.print("Enter Phone Number: ");
+		String number = insert.next();
+	    directory.insertFile(fName, lName, age, number);
 	    System.out.println();
 	    printMenu();
 	}

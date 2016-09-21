@@ -15,12 +15,13 @@ public class Directory {
 
 
     private static final String file = "D:\\Documents\\CS2410\\Ramirez-Raul-Assn3\\data\\cs2410-directory.data";
-	// private static final String file = "././data/cs2410-directory.data";
+	//private static final String file = "././data/cs2410-directory.data";
     Scanner fileIn = null;
         PrintWriter fileOut = null;
     float total = 0;
     int age = 0;
-    public void readFromFile(){
+    public String readFromFile(){
+	String output = "";
         System.out.println();
         try{
             fileIn = new Scanner(new FileReader(file));
@@ -28,11 +29,7 @@ public class Directory {
             e.printStackTrace();
         }
 
-	System.out.printf("%-10s \t", "First Name");
-            System.out.printf("%-10s \t", "Last Name");
-            System.out.printf("%-10s \t", "Age");
-	    System.out.printf("%-10s ", "Phone Number");
-            System.out.println();
+	output += String.format("%-15s %-15s %15s %15s\n", "First Name", "Last Name", "Age", "Phone Number");
 
 
         while(fileIn.hasNext()){
@@ -41,30 +38,17 @@ public class Directory {
 	    String age = fileIn.next();
 	    String number = fileIn.next();
 	   
-	     
-	    System.out.printf("%-10s \t", fName);
-            System.out.printf("%-10s \t", lName);
-            System.out.printf("%-10s \t", age);
-	    System.out.printf("%-10s ", number);
-            System.out.println();
+	    output += String.format("%-15s %-15s %15s %15s\n", fName, lName, age, number); 
 
-           // System.out.printf(fileIn.nextLine());
         }
+	return output;
     }
 
-    public void insertFile(){
-	Scanner input = new Scanner(System.in);
-		System.out.print("Enter First Name: ");
-		String fName = input.next();
-		System.out.print("Enter Last Name: ");
-		String lName = input.next();
-		System.out.print("Enter Age: ");
-		String age = input.next();
-		System.out.print("Enter Phone Number: ");
-		String number = input.next();
+    public void insertFile(String fName, String lName, String age, String number){
+
 	try{
 		fileOut = new PrintWriter(new BufferedWriter(new FileWriter("D:\\Documents\\CS2410\\Ramirez-Raul-Assn3\\data\\cs2410-directory.data", true)));
-	   // fileOut = new PrintWriter(new BufferedWriter(new FileWriter("././data/cs2410-directory.data", true)));
+	    //fileOut = new PrintWriter(new BufferedWriter(new FileWriter("././data/cs2410-directory.data", true)));
 	    fileOut.println(fName + " " + lName + " " + age + " " + number);
 		fileOut.close();
 	} catch (IOException e){

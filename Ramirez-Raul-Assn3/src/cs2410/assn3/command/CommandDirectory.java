@@ -32,12 +32,21 @@ public class CommandDirectory {
 	}
 
 	if (option == 1){
-	    directory.readFromFile();
+	    System.out.println(directory.readFromFile());
 	    System.out.println();
 	    printMenu();
 	}
 	if (option == 2){
-	    directory.insertFile();
+		Scanner insert = new Scanner(System.in);
+		System.out.print("Enter First Name: ");
+		String fName = insert.next();
+		System.out.print("Enter Last Name: ");
+		String lName = insert.next();
+		System.out.print("Enter Age: ");
+		String age = insert.next();
+		System.out.print("Enter Phone Number: ");
+		String number = insert.next();
+	    directory.insertFile(fName, lName, age, number);
 	    System.out.println();
 	    printMenu();
 	}
