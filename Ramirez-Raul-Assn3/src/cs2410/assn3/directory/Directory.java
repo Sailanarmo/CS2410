@@ -15,8 +15,8 @@ public class Directory {
 
 
 
-    private static final String file = "D:\\Documents\\CS2410\\Ramirez-Raul-Assn3\\data\\cs2410-directory.data";
-	//private static final String file = "././data/cs2410-directory.data";
+    //private static final String file = "D:\\Documents\\CS2410\\Ramirez-Raul-Assn3\\data\\cs2410-directory.data";
+	private static final String file = "data/cs2410-directory.data";
 
 	/**
 	 * setting up variables Scanner, PrintWriter, float, and int to use for later in the code.
@@ -76,8 +76,8 @@ public class Directory {
 		 * try opening the file to get ready for writing. If not, tell us why we cannot.
 		 */
 		try{
-			fileOut = new PrintWriter(new BufferedWriter(new FileWriter("D:\\Documents\\CS2410\\Ramirez-Raul-Assn3\\data\\cs2410-directory.data", true)));
-	    	//fileOut = new PrintWriter(new BufferedWriter(new FileWriter("././data/cs2410-directory.data", true)));
+			//fileOut = new PrintWriter(new BufferedWriter(new FileWriter("D:\\Documents\\CS2410\\Ramirez-Raul-Assn3\\data\\cs2410-directory.data", true)));
+	    	fileOut = new PrintWriter(new BufferedWriter(new FileWriter("data/cs2410-directory.data", true)));
 	    	fileOut.println(fName + " " + lName + " " + age + " " + number);
 			fileOut.close();
 		} catch (IOException e){
